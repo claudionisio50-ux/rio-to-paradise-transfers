@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 
 import { LanguageProvider, useLang, WHATSAPP_URL, type Lang } from "@/lib/i18n";
+import logoAsset from "@/assets/logo.png.asset.json";
 import heroImg from "@/assets/hero.jpg";
 import buziosImg from "@/assets/buzios.jpg";
 import arraialImg from "@/assets/arraial.jpg";
@@ -121,9 +122,13 @@ function Header() {
     <header className="absolute inset-x-0 top-0 z-40">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-4 sm:px-6">
         <a href="#top" className="flex items-center gap-2">
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-gradient text-sm font-bold text-primary-foreground">
-            TR
-          </span>
+          <img
+            src={logoAsset.url}
+            alt="Transfer Rio-Arraial e Búzios"
+            width={40}
+            height={40}
+            className="h-9 w-9 rounded-xl object-contain sm:h-10 sm:w-10"
+          />
           <span className="font-display text-sm font-semibold leading-tight text-ink-foreground sm:text-base">
             Transfer Rio
             <span className="block text-[10px] font-normal tracking-widest text-ink-foreground/80 sm:text-xs">
@@ -521,11 +526,15 @@ function Footer() {
   return (
     <footer className="bg-ink py-14 text-ink-foreground">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 md:grid-cols-4">
-        <div className="md:col-span-2">
+        <div>
           <div className="flex items-center gap-2">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gradient font-bold text-primary-foreground">
-              TR
-            </span>
+            <img
+              src={logoAsset.url}
+              alt="Transfer Rio-Arraial e Búzios"
+              width={40}
+              height={40}
+              className="h-10 w-10 rounded-xl object-contain"
+            />
             <span className="font-display text-base font-semibold">
               Transfer Rio-Arraial e Búzios
             </span>
