@@ -418,7 +418,8 @@ function Why() {
         <h2 className="text-3xl font-bold sm:text-5xl">{t.whyTitle}</h2>
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {t.why.map((item, i) => {
-            const Icon = icons[i];
+            const Icon = icons[i] ?? UsersIcon;
+
             return (
               <div key={item.t} className="rounded-3xl border border-border p-6 transition-shadow hover:shadow-[var(--shadow-soft)]">
                 <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent text-primary">
