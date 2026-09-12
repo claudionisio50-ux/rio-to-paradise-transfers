@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
 
 import { LanguageProvider, useLang, WHATSAPP_URL, type Lang } from "@/lib/i18n";
 import logoAsset from "@/assets/logo.png.asset.json";
@@ -10,6 +9,12 @@ import caboFrioImg from "@/assets/cabofrio.jpg";
 import angraImg from "@/assets/angra.jpg";
 import paratyImg from "@/assets/paraty.jpg";
 import aeroportosImg from "@/assets/aeroportos.jpg";
+import instagramDxfAsset from "@/assets/instagram-DXfC-ZbD_Xe.jpg.asset.json";
+import instagramDmnAsset from "@/assets/instagram-DMnh_w5RdZN.jpg.asset.json";
+import instagramDlkAsset from "@/assets/instagram-DLko_VrRuud.jpg.asset.json";
+import instagramDktAsset from "@/assets/instagram-DKTIFqDsnLj.jpg.asset.json";
+import instagramDj4Asset from "@/assets/instagram-DJ4Lt21RNZs.jpg.asset.json";
+import instagramDckAsset from "@/assets/instagram-DCKHeUbxlNI.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -24,7 +29,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Do Rio de Janeiro para o paraíso com conforto, segurança e pontualidade. Simule seu transfer em segundos.",
+          "Do Rio de Janeiro para o paraíso com conforto, segurança e pontualidade. Conheça nossas viagens.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -39,14 +44,6 @@ export const Route = createFileRoute("/")({
 
 type DestKey = "buzios" | "arraial" | "cabofrio" | "angra" | "paraty";
 
-const PRICES: Record<DestKey, { car: number; van6: number; van10: number }> = {
-  buzios: { car: 350, van6: 450, van10: 600 },
-  arraial: { car: 380, van6: 480, van10: 650 },
-  cabofrio: { car: 320, van6: 420, van10: 580 },
-  angra: { car: 400, van6: 520, van10: 700 },
-  paraty: { car: 500, van6: 650, van10: 850 },
-};
-
 const DEST_NAMES: Record<DestKey, string> = {
   buzios: "Búzios",
   arraial: "Arraial do Cabo",
@@ -55,7 +52,14 @@ const DEST_NAMES: Record<DestKey, string> = {
   paraty: "Paraty",
 };
 
-const GALLERY = [heroImg, buziosImg, arraialImg, caboFrioImg, angraImg, paratyImg];
+const INSTAGRAM_POSTS = [
+  { image: instagramDxfAsset.url, href: "https://www.instagram.com/p/DXfC-ZbD_Xe/" },
+  { image: instagramDmnAsset.url, href: "https://www.instagram.com/p/DMnh_w5RdZN/" },
+  { image: instagramDlkAsset.url, href: "https://www.instagram.com/p/DLko_VrRuud/" },
+  { image: instagramDktAsset.url, href: "https://www.instagram.com/reel/DKTIFqDsnLj/" },
+  { image: instagramDj4Asset.url, href: "https://www.instagram.com/p/DJ4Lt21RNZs/" },
+  { image: instagramDckAsset.url, href: "https://www.instagram.com/p/DCKHeUbxlNI/" },
+];
 
 function waLink(text?: string) {
   return text ? `${WHATSAPP_URL}?text=${encodeURIComponent(text)}` : WHATSAPP_URL;
@@ -70,10 +74,9 @@ function SitePage() {
       <main>
         <Hero />
         <Destinos />
-        <Simulador />
+        <Instagramavel />
         <Why />
         <Testimonials />
-        <Instagramavel />
         <FinalCta />
       </main>
       <Footer />
@@ -140,8 +143,8 @@ function Header() {
           <a href="#destinos" className="hover:text-primary">
             {t.navDestinos}
           </a>
-          <a href="#cotacao" className="hover:text-primary">
-            {t.navCotacao}
+          <a href="#fotos" className="hover:text-primary">
+            {t.navFotos}
           </a>
           <a href="#depoimentos" className="hover:text-primary">
             {t.navDepoimentos}
@@ -265,155 +268,6 @@ function Destinos() {
   );
 }
 
-const fieldClass =
-  "mt-2 w-full rounded-xl border border-white/40 bg-white/95 px-4 py-3 text-sm text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/40";
-const labelClass = "block text-sm font-semibold text-ink-foreground";
-
-function Simulador() {
-  const { t } = useLang();
-  const [origin, setOrigin] = useState<keyof typeof t.origins>("gig");
-  const [dest, setDest] = useState<DestKey>("buzios");
-  const [vehicle, setVehicle] = useState<"car" | "van6" | "van10">("car");
-  const [pax, setPax] = useState(2);
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-
-  const total = useMemo(() => PRICES[dest][vehicle], [dest, vehicle]);
-
-  const message = [
-    t.msgIntro,
-    `${t.msgOrigin}: ${t.origins[origin]}`,
-    `${t.msgDest}: ${DEST_NAMES[dest]}`,
-    `${t.msgVehicle}: ${t.vehicles[vehicle]}`,
-    `${t.msgPax}: ${pax}`,
-    `${t.msgDate}: ${date || "-"}`,
-    `${t.msgTime}: ${time || "-"}`,
-    `${t.msgTotal}: R$ ${total}`,
-  ].join("\n");
-
-  return (
-    <section id="cotacao" className="bg-secondary py-20 sm:py-28">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <h2 className="text-3xl font-bold text-ink-foreground sm:text-5xl">{t.simTitle}</h2>
-        <p className="mt-3 text-ink-foreground/85">{t.simSub}</p>
-
-        <div className="mt-10 grid gap-5 rounded-3xl bg-white/15 p-5 backdrop-blur-md sm:p-8 md:grid-cols-2">
-          <div>
-            <label className={labelClass} htmlFor="origem">
-              {t.origin}
-            </label>
-            <select
-              id="origem"
-              className={fieldClass}
-              value={origin}
-              onChange={(e) => setOrigin(e.target.value as keyof typeof t.origins)}
-            >
-              {(Object.keys(t.origins) as (keyof typeof t.origins)[]).map((k) => (
-                <option key={k} value={k}>
-                  {t.origins[k]}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div>
-            <label className={labelClass} htmlFor="destino">
-              {t.destination}
-            </label>
-            <select
-              id="destino"
-              className={fieldClass}
-              value={dest}
-              onChange={(e) => setDest(e.target.value as DestKey)}
-            >
-              {(Object.keys(DEST_NAMES) as DestKey[]).map((k) => (
-                <option key={k} value={k}>
-                  {DEST_NAMES[k]}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div>
-            <label className={labelClass} htmlFor="veiculo">
-              {t.vehicle}
-            </label>
-            <select
-              id="veiculo"
-              className={fieldClass}
-              value={vehicle}
-              onChange={(e) => setVehicle(e.target.value as "car" | "van6" | "van10")}
-            >
-              <option value="car">{t.vehicles.car}</option>
-              <option value="van6">{t.vehicles.van6}</option>
-              <option value="van10">{t.vehicles.van10}</option>
-            </select>
-          </div>
-
-          <div>
-            <label className={labelClass} htmlFor="pax">
-              {t.passengers}
-            </label>
-            <input
-              id="pax"
-              type="number"
-              min={1}
-              max={10}
-              className={fieldClass}
-              value={pax}
-              onChange={(e) => setPax(Number(e.target.value))}
-            />
-          </div>
-
-          <div>
-            <label className={labelClass} htmlFor="data">
-              {t.date}
-            </label>
-            <input
-              id="data"
-              type="date"
-              className={fieldClass}
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-            />
-          </div>
-
-          <div>
-            <label className={labelClass} htmlFor="hora">
-              {t.time}
-            </label>
-            <input
-              id="hora"
-              type="time"
-              className={fieldClass}
-              value={time}
-              onChange={(e) => setTime(e.target.value)}
-            />
-          </div>
-
-          <div className="md:col-span-2 flex flex-col items-center justify-between gap-5 rounded-2xl bg-ink/25 p-5 sm:flex-row">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-ink-foreground/80">
-                {t.estimated}
-              </p>
-              <p className="font-display text-4xl font-bold text-ink-foreground">R$ {total}</p>
-            </div>
-            <a
-              href={waLink(message)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-7 py-4 text-base font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-[1.03] sm:w-auto"
-            >
-              <WhatsIcon className="h-5 w-5" />
-              {t.confirmWhats}
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function Why() {
   const { t } = useLang();
   const icons = [UsersIcon, CarIcon, ChatIcon, ClockIcon];
@@ -471,31 +325,46 @@ function Testimonials() {
 function Instagramavel() {
   const { t } = useLang();
   return (
-    <section className="bg-background py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4 text-center sm:px-6">
-        <h2 className="text-3xl font-bold sm:text-5xl">{t.instaTitle}</h2>
-        <p className="mt-3 text-muted-foreground">{t.instaSub}</p>
+    <section id="fotos" className="bg-background py-20 sm:py-28">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold sm:text-5xl">{t.instaTitle}</h2>
+          <p className="mt-3 text-muted-foreground">{t.instaSub}</p>
+        </div>
         <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
-          {GALLERY.map((img, i) => (
-            <img
-              key={i}
-              src={img}
-              alt="Paisagem da Região dos Lagos e Costa Verde"
-              loading="lazy"
-              width={1024}
-              height={1024}
-              className="aspect-square w-full rounded-2xl object-cover transition-transform duration-500 hover:scale-[1.03]"
-            />
+          {INSTAGRAM_POSTS.map((post, index) => (
+            <a
+              key={post.href}
+              href={post.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${t.viewPost} ${index + 1}`}
+              className="group relative overflow-hidden rounded-2xl bg-muted shadow-[var(--shadow-soft)]"
+            >
+              <img
+                src={post.image}
+                alt={`${t.instaTitle} — ${index + 1}`}
+                loading="lazy"
+                width={640}
+                height={640}
+                className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+              />
+              <span className="absolute inset-x-3 bottom-3 rounded-full bg-ink/75 px-3 py-2 text-center text-xs font-semibold text-ink-foreground opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+                {t.viewPost}
+              </span>
+            </a>
           ))}
         </div>
-        <a
-          href="https://instagram.com/transferrioarraialebuzios"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-10 inline-flex items-center justify-center rounded-full bg-brand-gradient px-7 py-4 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-[1.03] sm:text-base"
-        >
-          {t.instaBtn}
-        </a>
+        <div className="mt-10 text-center">
+          <a
+            href="https://instagram.com/transferrioarraialebuzios"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-full bg-brand-gradient px-7 py-4 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-[1.03] sm:text-base"
+          >
+            {t.instaBtn}
+          </a>
+        </div>
       </div>
     </section>
   );
