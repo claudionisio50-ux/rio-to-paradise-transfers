@@ -52,13 +52,13 @@ const DEST_NAMES: Record<DestKey, string> = {
   paraty: "Paraty",
 };
 
-const INSTAGRAM_POSTS = [
-  { image: instagramDxfAsset.url, href: "https://www.instagram.com/p/DXfC-ZbD_Xe/" },
-  { image: instagramDmnAsset.url, href: "https://www.instagram.com/p/DMnh_w5RdZN/" },
-  { image: instagramDlkAsset.url, href: "https://www.instagram.com/p/DLko_VrRuud/" },
-  { image: instagramDktAsset.url, href: "https://www.instagram.com/reel/DKTIFqDsnLj/" },
-  { image: instagramDj4Asset.url, href: "https://www.instagram.com/p/DJ4Lt21RNZs/" },
-  { image: instagramDckAsset.url, href: "https://www.instagram.com/p/DCKHeUbxlNI/" },
+const INSTAGRAM_POSTS: { image: string; href: string; w: number; h: number }[] = [
+  { image: instagramDxfAsset.url, href: "https://www.instagram.com/p/DXfC-ZbD_Xe/", w: 640, h: 640 },
+  { image: instagramDmnAsset.url, href: "https://www.instagram.com/p/DMnh_w5RdZN/", w: 640, h: 640 },
+  { image: instagramDlkAsset.url, href: "https://www.instagram.com/p/DLko_VrRuud/", w: 640, h: 640 },
+  { image: instagramDktAsset.url, href: "https://www.instagram.com/reel/DKTIFqDsnLj/", w: 361, h: 640 },
+  { image: instagramDj4Asset.url, href: "https://www.instagram.com/p/DJ4Lt21RNZs/", w: 640, h: 640 },
+  { image: instagramDckAsset.url, href: "https://www.instagram.com/p/DCKHeUbxlNI/", w: 640, h: 639 },
 ];
 
 function waLink(text?: string) {
@@ -331,7 +331,7 @@ function Instagramavel() {
           <h2 className="text-3xl font-bold sm:text-5xl">{t.instaTitle}</h2>
           <p className="mt-3 text-muted-foreground">{t.instaSub}</p>
         </div>
-        <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
+        <div className="mt-10 grid grid-cols-2 items-start gap-3 sm:gap-4 md:grid-cols-3">
           {INSTAGRAM_POSTS.map((post, index) => (
             <a
               key={post.href}
@@ -339,15 +339,15 @@ function Instagramavel() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${t.viewPost} ${index + 1}`}
-              className="group relative overflow-hidden rounded-2xl bg-muted shadow-[var(--shadow-soft)]"
+              className="group relative block overflow-hidden rounded-2xl bg-muted shadow-[var(--shadow-soft)]"
             >
               <img
                 src={post.image}
                 alt={`${t.instaTitle} — ${index + 1}`}
                 loading="lazy"
-                width={640}
-                height={800}
-                className="mx-auto aspect-[4/5] h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
+                width={post.w}
+                height={post.h}
+                className="h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
               />
               <span className="absolute inset-x-3 bottom-3 rounded-full bg-ink/75 px-3 py-2 text-center text-xs font-semibold text-ink-foreground opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
                 {t.viewPost}
