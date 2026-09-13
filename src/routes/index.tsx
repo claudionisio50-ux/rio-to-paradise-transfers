@@ -161,10 +161,10 @@ function Hero() {
   return (
     <section id="top" className="relative isolate flex min-h-[100svh] items-center overflow-hidden">
       <img
-        src={heroImg}
-        alt="Praia de águas cristalinas na Região dos Lagos, Rio de Janeiro"
-        width={1920}
-        height={1088}
+        src={heroBayAsset.url}
+        alt="Mirante de madeira sobre baía de águas turquesa e praia na Região dos Lagos, Rio de Janeiro"
+        width={1086}
+        height={1448}
         className="absolute inset-0 h-full w-full object-cover"
       />
       <div className="hero-overlay absolute inset-0" />
