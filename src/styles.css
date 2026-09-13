@@ -74,9 +74,9 @@
   --ink-foreground: oklch(0.97 0.006 240);
   --gradient-hero: linear-gradient(
     to bottom,
-    oklch(0.2 0.03 250 / 0.55),
-    oklch(0.2 0.03 250 / 0.25) 45%,
-    oklch(0.2 0.03 250 / 0.7)
+    oklch(0.2 0.03 250 / 0.68),
+    oklch(0.2 0.03 250 / 0.38) 45%,
+    oklch(0.2 0.03 250 / 0.75)
   );
   --gradient-brand: linear-gradient(120deg, var(--primary), var(--secondary));
 }
