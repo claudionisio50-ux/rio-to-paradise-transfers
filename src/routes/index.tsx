@@ -4,10 +4,7 @@ import { LanguageProvider, useLang, WHATSAPP_URL, type Lang } from "@/lib/i18n";
 import logoAsset from "@/assets/logo.png.asset.json";
 import heroBayAsset from "@/assets/hero-bay.png.asset.json";
 import buziosAsset from "@/assets/buzios-pinterest.jpg.asset.json";
-import arraialAsset from "@/assets/arraial-pinterest.jpg.asset.json";
 import caboFrioAsset from "@/assets/cabofrio-pinterest.jpg.asset.json";
-import angraAsset from "@/assets/angra-pinterest.jpg.asset.json";
-import paratyAsset from "@/assets/paraty-pinterest.jpg.asset.json";
 import aeroportosImg from "@/assets/aeroportos.jpg";
 import instagramDxfAsset from "@/assets/instagram-DXfC-ZbD_Xe.jpg.asset.json";
 import instagramDmnAsset from "@/assets/instagram-DMnh_w5RdZN.jpg.asset.json";
@@ -220,13 +217,10 @@ function Hero() {
 
 function Destinos() {
   const { t } = useLang();
-  const cards: { name: string; img: string }[] = [
-    { name: DEST_NAMES.buzios, img: buziosAsset.url },
-    { name: DEST_NAMES.arraial, img: arraialAsset.url },
-    { name: DEST_NAMES.cabofrio, img: caboFrioAsset.url },
-    { name: DEST_NAMES.angra, img: angraAsset.url },
-    { name: DEST_NAMES.paraty, img: paratyAsset.url },
-    { name: t.aeroportos, img: aeroportosImg },
+  const cards = [
+    { ...t.destinationCards[0], img: buziosAsset.url },
+    { ...t.destinationCards[1], img: caboFrioAsset.url },
+    { ...t.destinationCards[2], img: aeroportosImg },
   ];
 
   return (
@@ -234,15 +228,15 @@ function Destinos() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="text-3xl font-bold sm:text-5xl">{t.destinosTitle}</h2>
         <p className="mt-3 max-w-2xl text-muted-foreground">{t.destinosSub}</p>
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
           {cards.map((c) => (
             <article
               key={c.name}
-              className="group relative isolate flex h-72 flex-col justify-end overflow-hidden rounded-3xl shadow-[var(--shadow-soft)]"
+              className="group relative isolate flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-3xl shadow-[var(--shadow-soft)] sm:aspect-[3/2] md:aspect-[4/5]"
             >
               <img
                 src={c.img}
-                alt={c.name}
+                alt={c.alt}
                 loading="lazy"
                 width={1024}
                 height={1024}
@@ -251,6 +245,7 @@ function Destinos() {
               <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-transparent" />
               <div className="relative p-6">
                 <h3 className="text-2xl font-bold text-ink-foreground">{c.name}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-foreground/85">{c.description}</p>
                 <a
                   href={waLink(`${t.msgIntro} ${t.msgDest}: ${c.name}`)}
                   target="_blank"
@@ -331,7 +326,7 @@ function Instagramavel() {
           <h2 className="text-3xl font-bold sm:text-5xl">{t.instaTitle}</h2>
           <p className="mt-3 text-muted-foreground">{t.instaSub}</p>
         </div>
-        <div className="mt-10 grid grid-cols-2 items-start gap-3 sm:gap-4 md:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {INSTAGRAM_POSTS.map((post, index) => (
             <a
               key={post.href}
@@ -339,19 +334,25 @@ function Instagramavel() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${t.viewPost} ${index + 1}`}
-              className="group relative block aspect-[4/5] overflow-hidden rounded-2xl bg-muted shadow-[var(--shadow-soft)]"
+              className="group block overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-soft)] transition duration-300 hover:-translate-y-1 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
-              <img
-                src={post.image}
-                alt={`${t.instaTitle} — ${index + 1}`}
-                loading="lazy"
-                width={post.w}
-                height={post.h}
-                className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
-              />
-              <span className="absolute inset-x-3 bottom-3 rounded-full bg-ink/75 px-3 py-2 text-center text-xs font-semibold text-ink-foreground opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
-                {t.viewPost}
-              </span>
+              <div className="aspect-[4/3] overflow-hidden bg-muted">
+                <img
+                  src={post.image}
+                  alt={`${t.tripCards[index]?.title ?? t.instaTitle} — ${index + 1}`}
+                  loading="lazy"
+                  width={post.w}
+                  height={post.h}
+                  className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+                />
+              </div>
+              <div className="p-5">
+                <h3 className="text-lg font-bold">{t.tripCards[index]?.title}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                  {t.tripCards[index]?.caption}
+                </p>
+                <span className="mt-4 inline-flex text-sm font-semibold text-primary">{t.viewPost}</span>
+              </div>
             </a>
           ))}
         </div>

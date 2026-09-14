@@ -2,7 +2,7 @@ import { createContext, useContext, useState, type ReactNode } from "react";
 
 export type Lang = "pt" | "es";
 
-export const WHATSAPP_URL = "https://wa.me/FHWA7DGD7ZQFN1";
+export const WHATSAPP_URL = "https://wa.me/5521980234309";
 
 export const dict = {
   pt: {
@@ -17,6 +17,23 @@ export const dict = {
     heroBadge: "+40 motoristas profissionais | Carros premium e vans",
     destinosTitle: "Para onde você quer ir?",
     destinosSub: "Translados privativos saindo do Rio de Janeiro para os destinos mais bonitos do litoral.",
+    destinationCards: [
+      {
+        name: "Búzios",
+        description: "Praias encantadoras, charme e conforto em um transfer privativo.",
+        alt: "Vista aérea das águas cristalinas e da costa de Búzios",
+      },
+      {
+        name: "Cabo Frio",
+        description: "Mar azul e praias de areia branca com uma viagem tranquila e segura.",
+        alt: "Vista aérea da praia de areia branca e do mar azul em Cabo Frio",
+      },
+      {
+        name: "Rio de Janeiro",
+        description: "Recepção nos aeroportos e deslocamentos privativos pela Cidade Maravilhosa.",
+        alt: "Veículos de transfer aguardando passageiros em um aeroporto do Rio de Janeiro",
+      },
+    ],
     requestTransfer: "Solicitar Transfer",
     aeroportos: "Aeroportos do Rio",
     whyTitle: "Por que nos escolher",
@@ -37,6 +54,14 @@ export const dict = {
     instaSub: "Veja destinos, veículos e momentos reais dos nossos transfers.",
     instaBtn: "Ver mais no Instagram",
     viewPost: "Ver publicação",
+    tripCards: [
+      { title: "Recepção personalizada", caption: "Cuidado e atenção desde o primeiro encontro." },
+      { title: "Viagens em boa companhia", caption: "Momentos especiais em cada trajeto." },
+      { title: "Conforto para sua família", caption: "Atendimento seguro para todas as idades." },
+      { title: "Experiência a bordo", caption: "Trajetos tranquilos em veículos confortáveis." },
+      { title: "Chegada a Arraial", caption: "Seu destino começa com uma viagem sem preocupações." },
+      { title: "Traslados em grupo", caption: "Espaço, organização e pontualidade para todos." },
+    ],
     ctaTitle: "Pronto para sua próxima aventura?",
     ctaBtn: "Agendar agora pelo WhatsApp",
     footerAbout: "Translados turísticos privativos saindo do Rio de Janeiro para a Região dos Lagos, Costa Verde e aeroportos.",
@@ -67,6 +92,23 @@ export const dict = {
     heroBadge: "+40 conductores profesionales | Autos premium y vans",
     destinosTitle: "¿A dónde querés ir?",
     destinosSub: "Traslados privados desde Río de Janeiro hacia los destinos más lindos de la costa.",
+    destinationCards: [
+      {
+        name: "Búzios",
+        description: "Playas encantadoras, estilo y comodidad en un traslado privado.",
+        alt: "Vista aérea de las aguas cristalinas y la costa de Búzios",
+      },
+      {
+        name: "Cabo Frio",
+        description: "Mar azul y playas de arena blanca con un viaje tranquilo y seguro.",
+        alt: "Vista aérea de la playa de arena blanca y el mar azul en Cabo Frio",
+      },
+      {
+        name: "Río de Janeiro",
+        description: "Recepción en los aeropuertos y traslados privados por la Ciudad Maravillosa.",
+        alt: "Vehículos de traslado esperando pasajeros en un aeropuerto de Río de Janeiro",
+      },
+    ],
     requestTransfer: "Solicitar Traslado",
     aeroportos: "Aeropuertos de Río",
     whyTitle: "Por qué elegirnos",
@@ -87,6 +129,14 @@ export const dict = {
     instaSub: "Mirá destinos, vehículos y momentos reales de nuestros traslados.",
     instaBtn: "Ver más en Instagram",
     viewPost: "Ver publicación",
+    tripCards: [
+      { title: "Recepción personalizada", caption: "Cuidado y atención desde el primer encuentro." },
+      { title: "Viajes en buena compañía", caption: "Momentos especiales en cada trayecto." },
+      { title: "Comodidad para tu familia", caption: "Atención segura para todas las edades." },
+      { title: "Experiencia a bordo", caption: "Trayectos tranquilos en vehículos cómodos." },
+      { title: "Llegada a Arraial", caption: "Tu destino comienza con un viaje sin preocupaciones." },
+      { title: "Traslados en grupo", caption: "Espacio, organización y puntualidad para todos." },
+    ],
     ctaTitle: "¿Listo para tu próxima aventura?",
     ctaBtn: "Reservar ahora por WhatsApp",
     footerAbout: "Traslados turísticos privados desde Río de Janeiro hacia la Región de los Lagos, Costa Verde y aeropuertos.",
