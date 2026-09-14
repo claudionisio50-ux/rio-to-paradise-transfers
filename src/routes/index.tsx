@@ -3,11 +3,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import { LanguageProvider, useLang, WHATSAPP_URL, type Lang } from "@/lib/i18n";
 import logoAsset from "@/assets/logo.png.asset.json";
 import heroBayAsset from "@/assets/hero-bay.png.asset.json";
-import buziosImg from "@/assets/buzios.jpg";
-import arraialImg from "@/assets/arraial.jpg";
-import caboFrioImg from "@/assets/cabofrio.jpg";
-import angraImg from "@/assets/angra.jpg";
-import paratyImg from "@/assets/paraty.jpg";
+import buziosAsset from "@/assets/buzios-pinterest.jpg.asset.json";
+import arraialAsset from "@/assets/arraial-pinterest.jpg.asset.json";
+import caboFrioAsset from "@/assets/cabofrio-pinterest.jpg.asset.json";
+import angraAsset from "@/assets/angra-pinterest.jpg.asset.json";
+import paratyAsset from "@/assets/paraty-pinterest.jpg.asset.json";
 import aeroportosImg from "@/assets/aeroportos.jpg";
 import instagramDxfAsset from "@/assets/instagram-DXfC-ZbD_Xe.jpg.asset.json";
 import instagramDmnAsset from "@/assets/instagram-DMnh_w5RdZN.jpg.asset.json";
@@ -221,11 +221,11 @@ function Hero() {
 function Destinos() {
   const { t } = useLang();
   const cards: { name: string; img: string }[] = [
-    { name: DEST_NAMES.buzios, img: buziosImg },
-    { name: DEST_NAMES.arraial, img: arraialImg },
-    { name: DEST_NAMES.cabofrio, img: caboFrioImg },
-    { name: DEST_NAMES.angra, img: angraImg },
-    { name: DEST_NAMES.paraty, img: paratyImg },
+    { name: DEST_NAMES.buzios, img: buziosAsset.url },
+    { name: DEST_NAMES.arraial, img: arraialAsset.url },
+    { name: DEST_NAMES.cabofrio, img: caboFrioAsset.url },
+    { name: DEST_NAMES.angra, img: angraAsset.url },
+    { name: DEST_NAMES.paraty, img: paratyAsset.url },
     { name: t.aeroportos, img: aeroportosImg },
   ];
 
@@ -339,7 +339,7 @@ function Instagramavel() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${t.viewPost} ${index + 1}`}
-              className="group relative block overflow-hidden rounded-2xl bg-muted shadow-[var(--shadow-soft)]"
+              className="group relative block aspect-[4/5] overflow-hidden rounded-2xl bg-muted shadow-[var(--shadow-soft)]"
             >
               <img
                 src={post.image}
@@ -347,7 +347,7 @@ function Instagramavel() {
                 loading="lazy"
                 width={post.w}
                 height={post.h}
-                className="h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
+                className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
               />
               <span className="absolute inset-x-3 bottom-3 rounded-full bg-ink/75 px-3 py-2 text-center text-xs font-semibold text-ink-foreground opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
                 {t.viewPost}
