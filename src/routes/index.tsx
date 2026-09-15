@@ -365,7 +365,7 @@ function Instagramavel() {
                   rel="noopener noreferrer"
                   className="mt-4 inline-flex w-fit text-sm font-semibold text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
-                  {t.viewPost} no Instagram
+                  {t.viewPost}
                 </a>
               </div>
             </article>

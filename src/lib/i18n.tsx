@@ -68,7 +68,7 @@ export const dict = {
     instaTitle: "Conheça nossas viagens",
     instaSub: "Veja destinos, veículos e momentos reais dos nossos transfers.",
     instaBtn: "Ver mais no Instagram",
-    viewPost: "Ver publicação",
+    viewPost: "Ver publicação no Instagram",
     tripCards: [
       { title: "Recepção personalizada", caption: "Cuidado e atenção desde o primeiro encontro." },
       { title: "Viagens em boa companhia", caption: "Momentos especiais em cada trajeto." },
@@ -158,7 +158,7 @@ export const dict = {
     instaTitle: "Conocé nuestros viajes",
     instaSub: "Mirá destinos, vehículos y momentos reales de nuestros traslados.",
     instaBtn: "Ver más en Instagram",
-    viewPost: "Ver publicación",
+    viewPost: "Ver publicación en Instagram",
     tripCards: [
       { title: "Recepción personalizada", caption: "Cuidado y atención desde el primer encuentro." },
       { title: "Viajes en buena compañía", caption: "Momentos especiales en cada trayecto." },
