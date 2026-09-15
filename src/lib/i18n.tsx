@@ -33,6 +33,21 @@ export const dict = {
         description: "Recepção nos aeroportos e deslocamentos privativos pela Cidade Maravilhosa.",
         alt: "Veículos de transfer aguardando passageiros em um aeroporto do Rio de Janeiro",
       },
+      {
+        name: "Arraial do Cabo",
+        description: "Águas azul-turquesa e praias inesquecíveis em um trajeto confortável.",
+        alt: "Praia de água azul-turquesa com barcos em Arraial do Cabo",
+      },
+      {
+        name: "Angra dos Reis",
+        description: "Ilhas, baías e paisagens exuberantes em uma viagem privativa e segura.",
+        alt: "Vista aérea da baía de Angra dos Reis com várias embarcações",
+      },
+      {
+        name: "Paraty",
+        description: "História, natureza e charme colonial em um transfer tranquilo pelo litoral.",
+        alt: "Casas coloniais coloridas no centro histórico de Paraty",
+      },
     ],
     requestTransfer: "Solicitar Transfer",
     aeroportos: "Aeroportos do Rio",
@@ -53,7 +68,7 @@ export const dict = {
     instaTitle: "Conheça nossas viagens",
     instaSub: "Veja destinos, veículos e momentos reais dos nossos transfers.",
     instaBtn: "Ver mais no Instagram",
-    viewPost: "Ver publicação",
+    viewPost: "Ver publicação no Instagram",
     tripCards: [
       { title: "Recepção personalizada", caption: "Cuidado e atenção desde o primeiro encontro." },
       { title: "Viagens em boa companhia", caption: "Momentos especiais em cada trajeto." },
@@ -108,6 +123,21 @@ export const dict = {
         description: "Recepción en los aeropuertos y traslados privados por la Ciudad Maravillosa.",
         alt: "Vehículos de traslado esperando pasajeros en un aeropuerto de Río de Janeiro",
       },
+      {
+        name: "Arraial do Cabo",
+        description: "Aguas turquesas y playas inolvidables en un trayecto cómodo.",
+        alt: "Playa de agua turquesa con barcos en Arraial do Cabo",
+      },
+      {
+        name: "Angra dos Reis",
+        description: "Islas, bahías y paisajes exuberantes en un viaje privado y seguro.",
+        alt: "Vista aérea de la bahía de Angra dos Reis con varias embarcaciones",
+      },
+      {
+        name: "Paraty",
+        description: "Historia, naturaleza y encanto colonial en un traslado tranquilo por la costa.",
+        alt: "Casas coloniales coloridas en el centro histórico de Paraty",
+      },
     ],
     requestTransfer: "Solicitar Traslado",
     aeroportos: "Aeropuertos de Río",
@@ -128,7 +158,7 @@ export const dict = {
     instaTitle: "Conocé nuestros viajes",
     instaSub: "Mirá destinos, vehículos y momentos reales de nuestros traslados.",
     instaBtn: "Ver más en Instagram",
-    viewPost: "Ver publicación",
+    viewPost: "Ver publicación en Instagram",
     tripCards: [
       { title: "Recepción personalizada", caption: "Cuidado y atención desde el primer encuentro." },
       { title: "Viajes en buena compañía", caption: "Momentos especiales en cada trayecto." },

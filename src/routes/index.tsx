@@ -5,6 +5,9 @@ import logoAsset from "@/assets/logo.png.asset.json";
 import heroBayAsset from "@/assets/hero-bay.png.asset.json";
 import buziosAsset from "@/assets/buzios-pinterest.jpg.asset.json";
 import caboFrioAsset from "@/assets/cabofrio-pinterest.jpg.asset.json";
+import arraialAsset from "@/assets/arraial-pinterest.jpg.asset.json";
+import angraAsset from "@/assets/angra-pinterest.jpg.asset.json";
+import paratyAsset from "@/assets/paraty-pinterest.jpg.asset.json";
 import aeroportosImg from "@/assets/aeroportos.jpg";
 import instagramDxfAsset from "@/assets/instagram-DXfC-ZbD_Xe.jpg.asset.json";
 import instagramDmnAsset from "@/assets/instagram-DMnh_w5RdZN.jpg.asset.json";
@@ -221,6 +224,9 @@ function Destinos() {
     { ...t.destinationCards[0], img: buziosAsset.url },
     { ...t.destinationCards[1], img: caboFrioAsset.url },
     { ...t.destinationCards[2], img: aeroportosImg },
+    { ...t.destinationCards[3], img: arraialAsset.url },
+    { ...t.destinationCards[4], img: angraAsset.url },
+    { ...t.destinationCards[5], img: paratyAsset.url },
   ];
 
   return (
@@ -228,11 +234,11 @@ function Destinos() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="text-3xl font-bold sm:text-5xl">{t.destinosTitle}</h2>
         <p className="mt-3 max-w-2xl text-muted-foreground">{t.destinosSub}</p>
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {cards.map((c) => (
             <article
               key={c.name}
-              className="group relative isolate flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-3xl shadow-[var(--shadow-soft)] sm:aspect-[3/2] md:aspect-[4/5]"
+              className="group relative isolate flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-3xl shadow-[var(--shadow-soft)]"
             >
               <img
                 src={c.img}
@@ -328,15 +334,17 @@ function Instagramavel() {
         </div>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {INSTAGRAM_POSTS.map((post, index) => (
-            <a
+            <article
               key={post.href}
-              href={post.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${t.viewPost} ${index + 1}`}
-              className="group block overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-soft)] transition duration-300 hover:-translate-y-1 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-soft)] transition duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="aspect-[4/3] overflow-hidden bg-muted">
+              <a
+                href={post.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${t.viewPost}: ${t.tripCards[index]?.title ?? t.instaTitle}`}
+                className="block aspect-[4/3] overflow-hidden bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring"
+              >
                 <img
                   src={post.image}
                   alt={`${t.tripCards[index]?.title ?? t.instaTitle} — ${index + 1}`}
@@ -345,15 +353,22 @@ function Instagramavel() {
                   height={post.h}
                   className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
                 />
-              </div>
-              <div className="p-5">
+              </a>
+              <div className="flex flex-1 flex-col p-5">
                 <h3 className="text-lg font-bold">{t.tripCards[index]?.title}</h3>
                 <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                   {t.tripCards[index]?.caption}
                 </p>
-                <span className="mt-4 inline-flex text-sm font-semibold text-primary">{t.viewPost}</span>
+                <a
+                  href={post.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex w-fit text-sm font-semibold text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  {t.viewPost}
+                </a>
               </div>
-            </a>
+            </article>
           ))}
         </div>
         <div className="mt-10 text-center">
