@@ -8,7 +8,6 @@ import caboFrioAsset from "@/assets/cabofrio-pinterest.jpg.asset.json";
 import arraialAsset from "@/assets/arraial-pinterest.jpg.asset.json";
 import angraAsset from "@/assets/angra-pinterest.jpg.asset.json";
 import paratyAsset from "@/assets/paraty-pinterest.jpg.asset.json";
-import aeroportosImg from "@/assets/aeroportos.jpg";
 import instagramDxfAsset from "@/assets/instagram-DXfC-ZbD_Xe.jpg.asset.json";
 import instagramDmnAsset from "@/assets/instagram-DMnh_w5RdZN.jpg.asset.json";
 import instagramDlkAsset from "@/assets/instagram-DLko_VrRuud.jpg.asset.json";

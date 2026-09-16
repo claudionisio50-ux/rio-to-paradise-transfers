@@ -21,7 +21,7 @@ export const dict = {
       {
         name: "Búzios",
         description: "Praias encantadoras, charme e conforto em um transfer privativo.",
-        alt: "Vista aérea das águas cristalinas e da costa de Búzios",
+        alt: "Vista panorâmica de praia entre formações rochosas, vegetação e mar azul em Búzios",
       },
       {
         name: "Arraial do Cabo",
@@ -106,7 +106,7 @@ export const dict = {
       {
         name: "Búzios",
         description: "Playas encantadoras, estilo y comodidad en un traslado privado.",
-        alt: "Vista aérea de las aguas cristalinas y la costa de Búzios",
+        alt: "Vista panorámica de una playa entre formaciones rocosas, vegetación y mar azul en Búzios",
       },
       {
         name: "Arraial do Cabo",
