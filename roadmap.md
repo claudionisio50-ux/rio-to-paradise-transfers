@@ -1,6 +1,4 @@
-# Tarefas
-
-- [x] Usar a imagem anexada somente no card de Búzios.
-- [x] Exibir exatamente cinco destinos na ordem solicitada, com PT/ES e WhatsApp preservados.
-- [x] Substituir Instagramavel por TravelGallery com seis cards tradicionais 4:3.
-- [x] Validar celular, tablet, desktop, idiomas e links.
+## Aberto
+- [ ] Excluir integralmente a seção "Conheça nossas viagens" (pedido reforçado pelo usuário)
+- [ ] Criar "Nossos destinos em destaque" com os 6 cards 4:3, PT/ES, links Instagram e botão geral
+- [ ] Validar PT/ES em celular, tablet e desktop + WhatsApp +55 21 98023-4309
