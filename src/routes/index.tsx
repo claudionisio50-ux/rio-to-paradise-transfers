@@ -8,12 +8,6 @@ import caboFrioAsset from "@/assets/cabofrio-pinterest.jpg.asset.json";
 import arraialAsset from "@/assets/arraial-pinterest.jpg.asset.json";
 import angraAsset from "@/assets/angra-pinterest.jpg.asset.json";
 import paratyAsset from "@/assets/paraty-pinterest.jpg.asset.json";
-import instagramDxfAsset from "@/assets/instagram-DXfC-ZbD_Xe.jpg.asset.json";
-import instagramDmnAsset from "@/assets/instagram-DMnh_w5RdZN.jpg.asset.json";
-import instagramDlkAsset from "@/assets/instagram-DLko_VrRuud.jpg.asset.json";
-import instagramDktAsset from "@/assets/instagram-DKTIFqDsnLj.jpg.asset.json";
-import instagramDj4Asset from "@/assets/instagram-DJ4Lt21RNZs.jpg.asset.json";
-import instagramDckAsset from "@/assets/instagram-DCKHeUbxlNI.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -50,15 +44,6 @@ const DEST_NAMES: Record<DestKey, string> = {
   angra: "Angra dos Reis",
   paraty: "Paraty",
 };
-
-const INSTAGRAM_POSTS: { image: string; href: string; w: number; h: number }[] = [
-  { image: instagramDxfAsset.url, href: "https://www.instagram.com/p/DXfC-ZbD_Xe/", w: 640, h: 640 },
-  { image: instagramDmnAsset.url, href: "https://www.instagram.com/p/DMnh_w5RdZN/", w: 640, h: 640 },
-  { image: instagramDlkAsset.url, href: "https://www.instagram.com/p/DLko_VrRuud/", w: 640, h: 640 },
-  { image: instagramDktAsset.url, href: "https://www.instagram.com/reel/DKTIFqDsnLj/", w: 361, h: 640 },
-  { image: instagramDj4Asset.url, href: "https://www.instagram.com/p/DJ4Lt21RNZs/", w: 640, h: 640 },
-  { image: instagramDckAsset.url, href: "https://www.instagram.com/p/DCKHeUbxlNI/", w: 640, h: 639 },
-];
 
 function waLink(text?: string) {
   return text ? `${WHATSAPP_URL}?text=${encodeURIComponent(text)}` : WHATSAPP_URL;
