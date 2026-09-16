@@ -24,19 +24,14 @@ export const dict = {
         alt: "Vista aérea das águas cristalinas e da costa de Búzios",
       },
       {
-        name: "Cabo Frio",
-        description: "Mar azul e praias de areia branca com uma viagem tranquila e segura.",
-        alt: "Vista aérea da praia de areia branca e do mar azul em Cabo Frio",
-      },
-      {
-        name: "Rio de Janeiro",
-        description: "Recepção nos aeroportos e deslocamentos privativos pela Cidade Maravilhosa.",
-        alt: "Veículos de transfer aguardando passageiros em um aeroporto do Rio de Janeiro",
-      },
-      {
         name: "Arraial do Cabo",
         description: "Águas azul-turquesa e praias inesquecíveis em um trajeto confortável.",
         alt: "Praia de água azul-turquesa com barcos em Arraial do Cabo",
+      },
+      {
+        name: "Cabo Frio",
+        description: "Mar azul e praias de areia branca com uma viagem tranquila e segura.",
+        alt: "Vista aérea da praia de areia branca e do mar azul em Cabo Frio",
       },
       {
         name: "Angra dos Reis",
@@ -114,19 +109,14 @@ export const dict = {
         alt: "Vista aérea de las aguas cristalinas y la costa de Búzios",
       },
       {
-        name: "Cabo Frio",
-        description: "Mar azul y playas de arena blanca con un viaje tranquilo y seguro.",
-        alt: "Vista aérea de la playa de arena blanca y el mar azul en Cabo Frio",
-      },
-      {
-        name: "Río de Janeiro",
-        description: "Recepción en los aeropuertos y traslados privados por la Ciudad Maravillosa.",
-        alt: "Vehículos de traslado esperando pasajeros en un aeropuerto de Río de Janeiro",
-      },
-      {
         name: "Arraial do Cabo",
         description: "Aguas turquesas y playas inolvidables en un trayecto cómodo.",
         alt: "Playa de agua turquesa con barcos en Arraial do Cabo",
+      },
+      {
+        name: "Cabo Frio",
+        description: "Mar azul y playas de arena blanca con un viaje tranquilo y seguro.",
+        alt: "Vista aérea de la playa de arena blanca y el mar azul en Cabo Frio",
       },
       {
         name: "Angra dos Reis",

@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { LanguageProvider, useLang, WHATSAPP_URL, type Lang } from "@/lib/i18n";
 import logoAsset from "@/assets/logo.png.asset.json";
 import heroBayAsset from "@/assets/hero-bay.png.asset.json";
-import buziosAsset from "@/assets/buzios-pinterest.jpg.asset.json";
+import buziosAsset from "@/assets/buzios-coast.jpg.asset.json";
 import caboFrioAsset from "@/assets/cabofrio-pinterest.jpg.asset.json";
 import arraialAsset from "@/assets/arraial-pinterest.jpg.asset.json";
 import angraAsset from "@/assets/angra-pinterest.jpg.asset.json";
@@ -74,7 +74,7 @@ function SitePage() {
       <main>
         <Hero />
         <Destinos />
-        <Instagramavel />
+        <TravelGallery />
         <Why />
         <Testimonials />
         <FinalCta />
@@ -222,11 +222,10 @@ function Destinos() {
   const { t } = useLang();
   const cards = [
     { ...t.destinationCards[0], img: buziosAsset.url },
-    { ...t.destinationCards[1], img: caboFrioAsset.url },
-    { ...t.destinationCards[2], img: aeroportosImg },
-    { ...t.destinationCards[3], img: arraialAsset.url },
-    { ...t.destinationCards[4], img: angraAsset.url },
-    { ...t.destinationCards[5], img: paratyAsset.url },
+    { ...t.destinationCards[1], img: arraialAsset.url },
+    { ...t.destinationCards[2], img: caboFrioAsset.url },
+    { ...t.destinationCards[3], img: angraAsset.url },
+    { ...t.destinationCards[4], img: paratyAsset.url },
   ];
 
   return (
@@ -323,7 +322,7 @@ function Testimonials() {
   );
 }
 
-function Instagramavel() {
+function TravelGallery() {
   const { t } = useLang();
   return (
     <section id="fotos" className="bg-background py-20 sm:py-28">
@@ -332,7 +331,7 @@ function Instagramavel() {
           <h2 className="text-3xl font-bold sm:text-5xl">{t.instaTitle}</h2>
           <p className="mt-3 text-muted-foreground">{t.instaSub}</p>
         </div>
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {INSTAGRAM_POSTS.map((post, index) => (
             <article
               key={post.href}
@@ -343,7 +342,7 @@ function Instagramavel() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${t.viewPost}: ${t.tripCards[index]?.title ?? t.instaTitle}`}
-                className="block aspect-[4/3] overflow-hidden bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring"
+                className="block overflow-hidden bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring"
               >
                 <img
                   src={post.image}
@@ -351,7 +350,7 @@ function Instagramavel() {
                   loading="lazy"
                   width={post.w}
                   height={post.h}
-                  className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+                  className="aspect-[4/3] h-auto w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
                 />
               </a>
               <div className="flex flex-1 flex-col p-5">
