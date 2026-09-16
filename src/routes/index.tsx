@@ -73,7 +73,7 @@ function SitePage() {
       <main>
         <Hero />
         <Destinos />
-        <TravelGallery />
+        <FeaturedDestinations />
         <Why />
         <Testimonials />
         <FinalCta />
@@ -321,40 +321,32 @@ function Testimonials() {
   );
 }
 
-function TravelGallery() {
+function FeaturedDestinations() {
   const { t } = useLang();
   return (
-    <section id="fotos" className="bg-background py-20 sm:py-28">
+    <section id="fotos" className="bg-surface py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="text-center">
+        <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold sm:text-5xl">{t.instaTitle}</h2>
           <p className="mt-3 text-muted-foreground">{t.instaSub}</p>
         </div>
-        <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {INSTAGRAM_POSTS.map((post, index) => (
             <article
               key={post.href}
-              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-soft)] transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+              className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-soft)] transition-shadow duration-300 hover:shadow-lg"
             >
-              <a
-                href={post.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${t.viewPost}: ${t.tripCards[index]?.title ?? t.instaTitle}`}
-                className="block overflow-hidden bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring"
-              >
-                <img
-                  src={post.image}
-                  alt={`${t.tripCards[index]?.title ?? t.instaTitle} — ${index + 1}`}
-                  loading="lazy"
-                  width={post.w}
-                  height={post.h}
-                  className="aspect-[4/3] h-auto w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
-                />
-              </a>
+              <img
+                src={post.image}
+                alt={t.tripCards[index]?.title ?? t.instaTitle}
+                loading="lazy"
+                width={post.w}
+                height={post.h}
+                className="aspect-[4/3] w-full object-cover"
+              />
               <div className="flex flex-1 flex-col p-5">
                 <h3 className="text-lg font-bold">{t.tripCards[index]?.title}</h3>
-                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                   {t.tripCards[index]?.caption}
                 </p>
                 <a
