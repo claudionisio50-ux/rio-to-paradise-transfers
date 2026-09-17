@@ -58,7 +58,6 @@ function SitePage() {
       <main>
         <Hero />
         <Destinos />
-        <FeaturedDestinations />
         <Why />
         <Testimonials />
         <FinalCta />
@@ -126,9 +125,6 @@ function Header() {
         <nav className="hidden items-center gap-6 text-sm font-medium text-ink-foreground/90 md:flex">
           <a href="#destinos" className="hover:text-primary">
             {t.navDestinos}
-          </a>
-          <a href="#fotos" className="hover:text-primary">
-            {t.navFotos}
           </a>
           <a href="#depoimentos" className="hover:text-primary">
             {t.navDepoimentos}
@@ -306,60 +302,6 @@ function Testimonials() {
   );
 }
 
-function FeaturedDestinations() {
-  const { t } = useLang();
-  return (
-    <section id="fotos" className="bg-surface py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold sm:text-5xl">{t.instaTitle}</h2>
-          <p className="mt-3 text-muted-foreground">{t.instaSub}</p>
-        </div>
-        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {INSTAGRAM_POSTS.map((post, index) => (
-            <article
-              key={post.href}
-              className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-soft)] transition-shadow duration-300 hover:shadow-lg"
-            >
-              <img
-                src={post.image}
-                alt={t.tripCards[index]?.title ?? t.instaTitle}
-                loading="lazy"
-                width={post.w}
-                height={post.h}
-                className="aspect-[4/3] w-full object-cover"
-              />
-              <div className="flex flex-1 flex-col p-5">
-                <h3 className="text-lg font-bold">{t.tripCards[index]?.title}</h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {t.tripCards[index]?.caption}
-                </p>
-                <a
-                  href={post.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-flex w-fit text-sm font-semibold text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                >
-                  {t.viewPost}
-                </a>
-              </div>
-            </article>
-          ))}
-        </div>
-        <div className="mt-10 text-center">
-          <a
-            href="https://instagram.com/transferrioarraialebuzios"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-brand-gradient px-7 py-4 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-[1.03] sm:text-base"
-          >
-            {t.instaBtn}
-          </a>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function FinalCta() {
   const { t } = useLang();

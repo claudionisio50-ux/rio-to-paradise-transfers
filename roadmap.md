@@ -1,4 +1,7 @@
 ## Aberto
-- [ ] Excluir integralmente a seção "Conheça nossas viagens" (pedido reforçado pelo usuário)
-- [ ] Criar "Nossos destinos em destaque" com os 6 cards 4:3, PT/ES, links Instagram e botão geral
-- [ ] Validar PT/ES em celular, tablet e desktop + WhatsApp +55 21 98023-4309
+(nenhuma)
+
+## Concluído
+- [x] Excluir integralmente a seção "Conheça nossas viagens" — sem substituição, a pedido do usuário
+- [x] Importar o ZIP enviado (idêntico ao projeto) e remover o resquício quebrado da seção (componente, chamada e link "Fotos" do menu)
+- [x] Validar PT/ES em celular e desktop, 5 destinos, WhatsApp +55 21 98023-4309, build OK
