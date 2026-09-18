@@ -288,7 +288,9 @@ function Experiencias() {
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {experiences.map((experience) => (
             <article key={experience.href} className="overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-1">
-              <img src={experience.image} alt={experience.alt} loading="lazy" className="aspect-[4/3] w-full object-cover" />
+              <div className="flex aspect-[4/3] w-full items-center justify-center bg-muted">
+                <img src={experience.image} alt={experience.alt} loading="lazy" className="h-full w-full object-contain" />
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold">{experience.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{experience.description}</p>
