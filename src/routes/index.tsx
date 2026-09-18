@@ -8,6 +8,12 @@ import caboFrioAsset from "@/assets/cabofrio-pinterest.jpg.asset.json";
 import arraialAsset from "@/assets/arraial-pinterest.jpg.asset.json";
 import angraAsset from "@/assets/angra-pinterest.jpg.asset.json";
 import paratyAsset from "@/assets/paraty-pinterest.jpg.asset.json";
+import viagem01Asset from "@/assets/viagem-01.png.asset.json";
+import viagem02Asset from "@/assets/viagem-02.png.asset.json";
+import viagem03Asset from "@/assets/viagem-03.png.asset.json";
+import viagem04Asset from "@/assets/viagem-04.png.asset.json";
+import viagem05Asset from "@/assets/viagem-05.png.asset.json";
+import viagem06Asset from "@/assets/viagem-06.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -58,6 +64,7 @@ function SitePage() {
       <main>
         <Hero />
         <Destinos />
+        <Experiencias />
         <Why />
         <Testimonials />
         <FinalCta />
@@ -239,6 +246,60 @@ function Destinos() {
                 >
                   {t.requestTransfer}
                 </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Experiencias() {
+  const { lang, t } = useLang();
+  const isSpanish = lang === "es";
+  const experiences = isSpanish
+    ? [
+        { image: viagem01Asset.url, title: "Llegadas sin preocupaciones", description: "Recibimos a cada pasajero con atención, comodidad y puntualidad.", href: "https://www.instagram.com/p/DLxpIQwRSqG/", alt: "Familia recibida por el equipo de Transfer Rio" },
+        { image: viagem02Asset.url, title: "Viajes en familia", description: "Traslados seguros para disfrutar el camino desde el primer momento.", href: "https://www.instagram.com/p/DDjztr6xwUy/", alt: "Familia junto al vehículo y sus equipajes" },
+        { image: viagem03Asset.url, title: "Conexión con el aeropuerto", description: "Servicio organizado para que cada embarque y desembarque sea tranquilo.", href: "https://www.instagram.com/p/C2e3XRlrvUK/", alt: "Pasajeros con equipaje junto al conductor" },
+        { image: viagem04Asset.url, title: "Comodidad en cada trayecto", description: "Atención cercana y transporte confiable para toda la familia.", href: "https://www.instagram.com/p/Cvj9LhRLrZj/", alt: "Familia junto a un vehículo en un destino costero" },
+        { image: viagem05Asset.url, title: "Grupos preparados para viajar", description: "Más espacio, organización y seguridad para grupos y equipajes.", href: "https://www.instagram.com/p/CuMuaXuLwLM/", alt: "Grupo de pasajeros con maletas en la ciudad" },
+        { image: viagem06Asset.url, title: "Experiencias que quedan", description: "Cada traslado forma parte de una experiencia especial en Río de Janeiro.", href: "https://www.instagram.com/p/Db_-EKSPwP9/", alt: "Pasajeros sonriendo junto a un vehículo" },
+      ]
+    : [
+        { image: viagem01Asset.url, title: "Chegadas sem preocupação", description: "Recebemos cada passageiro com atenção, conforto e pontualidade.", href: "https://www.instagram.com/p/DLxpIQwRSqG/", alt: "Família recebida pela equipe da Transfer Rio" },
+        { image: viagem02Asset.url, title: "Viagens em família", description: "Transfers seguros para aproveitar o caminho desde o primeiro momento.", href: "https://www.instagram.com/p/DDjztr6xwUy/", alt: "Família ao lado do veículo com suas bagagens" },
+        { image: viagem03Asset.url, title: "Conexão com o aeroporto", description: "Serviço organizado para cada embarque e desembarque ser tranquilo.", href: "https://www.instagram.com/p/C2e3XRlrvUK/", alt: "Passageiros com bagagem ao lado do motorista" },
+        { image: viagem04Asset.url, title: "Conforto em cada trajeto", description: "Atendimento próximo e transporte confiável para toda a família.", href: "https://www.instagram.com/p/Cvj9LhRLrZj/", alt: "Família ao lado de um veículo em destino litorâneo" },
+        { image: viagem05Asset.url, title: "Grupos prontos para viajar", description: "Mais espaço, organização e segurança para grupos e bagagens.", href: "https://www.instagram.com/p/CuMuaXuLwLM/", alt: "Grupo de passageiros com malas na cidade" },
+        { image: viagem06Asset.url, title: "Experiências que ficam", description: "Cada transfer faz parte de uma experiência especial no Rio de Janeiro.", href: "https://www.instagram.com/p/Db_-EKSPwP9/", alt: "Passageiros sorrindo ao lado de um veículo" },
+      ];
+
+  return (
+    <section id="experiencias" className="bg-background py-20 sm:py-28">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="max-w-2xl">
+          <h2 className="text-3xl font-bold sm:text-5xl">{isSpanish ? "Experiencias que quedan" : "Experiências que ficam"}</h2>
+          <p className="mt-3 text-muted-foreground">
+            {isSpanish ? "Conocé algunos momentos especiales vividos con Transfer Rio." : "Conheça alguns momentos especiais vividos com a Transfer Rio."}
+          </p>
+        </div>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {experiences.map((experience) => (
+            <article key={experience.href} className="overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-1">
+              <img src={experience.image} alt={experience.alt} loading="lazy" className="aspect-[4/3] w-full object-cover" />
+              <div className="p-6">
+                <h3 className="text-xl font-bold">{experience.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{experience.description}</p>
+                <div className="mt-5 flex flex-wrap gap-3">
+                  <a href={waLink(`${t.msgIntro} ${isSpanish ? "Quiero conocer este servicio" : "Quero conhecer este serviço"}`)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105">
+                    {isSpanish ? "Quiero conocer" : "Quero conhecer"}
+                  </a>
+                  <a href={experience.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-semibold text-primary hover:underline">
+                    {isSpanish ? "Ver publicación" : "Ver publicação"}
+                  </a>
+                </div>
               </div>
             </article>
           ))}
