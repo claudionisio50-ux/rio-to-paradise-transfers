@@ -398,7 +398,7 @@ function Footer() {
               className="h-10 w-10 rounded-xl object-contain"
             />
             <span className="font-display text-base font-semibold">
-              TRANSFERRIOARRAIALEBUZIOS.
+              Transferrioarraialebuzios
             </span>
           </div>
           <p className="mt-4 max-w-md text-sm text-ink-foreground/70">{t.footerAbout}</p>
