@@ -2,7 +2,7 @@ import { createContext, useContext, useState, type ReactNode } from "react";
 
 export type Lang = "pt" | "es";
 
-export const WHATSAPP_URL = "https://wa.me/5521980234309";
+export const WHATSAPP_URL = "https://wa.me/5522981216927";
 
 export const dict = {
   pt: {
