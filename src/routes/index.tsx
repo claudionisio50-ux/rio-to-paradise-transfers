@@ -123,10 +123,7 @@ function Header() {
             className="h-9 w-9 rounded-xl object-contain sm:h-10 sm:w-10"
           />
           <span className="font-display text-sm font-semibold leading-tight text-ink-foreground sm:text-base">
-            Transfer Rio
-            <span className="block text-[10px] font-normal tracking-widest text-ink-foreground/80 sm:text-xs">
-              ARRAIAL &amp; BÚZIOS
-            </span>
+            TRANSFERRIOARRAIALEBUZIOS
           </span>
         </a>
         <nav className="hidden items-center gap-6 text-sm font-medium text-ink-foreground/90 md:flex">
@@ -282,7 +279,7 @@ function Experiencias() {
         <div className="max-w-2xl">
           <h2 className="text-3xl font-bold sm:text-5xl">{isSpanish ? "Experiencias que quedan" : "Experiências que ficam"}</h2>
           <p className="mt-3 text-muted-foreground">
-            {isSpanish ? "Conocé algunos momentos especiales vividos con Transfer Rio." : "Conheça alguns momentos especiais vividos com a Transfer Rio."}
+            {isSpanish ? "Conocé algunos momentos especiales vividos con Transfer Rio." : "Conheça alguns momentos especiais vividos com a Transferrioarraialebuzios."}
           </p>
         </div>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -401,7 +398,7 @@ function Footer() {
               className="h-10 w-10 rounded-xl object-contain"
             />
             <span className="font-display text-base font-semibold">
-              Transfer Rio-Arraial e Búzios
+              TRANSFERRIOARRAIALEBUZIOS.
             </span>
           </div>
           <p className="mt-4 max-w-md text-sm text-ink-foreground/70">{t.footerAbout}</p>
@@ -463,7 +460,7 @@ function Footer() {
         </div>
       </div>
       <div className="mx-auto mt-10 max-w-6xl px-4 text-xs text-ink-foreground/50 sm:px-6">
-        © {new Date().getFullYear()} Transfer Rio-Arraial e Búzios. {t.rights}
+        © {new Date().getFullYear()} Transferrioarraialebuzios. {t.rights}
       </div>
     </footer>
   );
