@@ -3,7 +3,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { LanguageProvider, useLang, WHATSAPP_URL, type Lang } from "@/lib/i18n";
 import logoAsset from "@/assets/logo.png.asset.json";
 import heroBayAsset from "@/assets/hero-bay.png.asset.json";
-import buziosAsset from "@/assets/buzios-orla-bardot.jpg";
 import caboFrioAsset from "@/assets/cabofrio-pinterest.jpg.asset.json";
 import arraialAsset from "@/assets/arraial-pinterest.jpg.asset.json";
 import angraAsset from "@/assets/angra-pinterest.jpg.asset.json";
@@ -206,7 +205,7 @@ function Hero() {
 function Destinos() {
   const { t } = useLang();
   const cards = [
-    { ...t.destinationCards[0], img: buziosAsset.url },
+    { ...t.destinationCards[0], img: "/buzios-orla-bardot.jpg" },
     { ...t.destinationCards[1], img: arraialAsset.url },
     { ...t.destinationCards[2], img: caboFrioAsset.url },
     { ...t.destinationCards[3], img: angraAsset.url },
