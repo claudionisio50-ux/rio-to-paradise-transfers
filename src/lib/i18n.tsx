@@ -21,7 +21,7 @@ export const dict = {
       {
         name: "Búzios",
         description: "Praias encantadoras, charme e conforto em um transfer privativo.",
-        alt: "Vista panorâmica de praia entre formações rochosas, vegetação e mar azul em Búzios",
+        alt: "Estátua de bronze na orla Bardot em Búzios, com calçadão, mar e barcos ao fundo",
       },
       {
         name: "Arraial do Cabo",

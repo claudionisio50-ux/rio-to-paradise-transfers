@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { LanguageProvider, useLang, WHATSAPP_URL, type Lang } from "@/lib/i18n";
 import logoAsset from "@/assets/logo.png.asset.json";
 import heroBayAsset from "@/assets/hero-bay.png.asset.json";
-import buziosAsset from "@/assets/buzios-coast.jpg.asset.json";
+import buziosAsset from "@/assets/buzios-orla-bardot.png.asset.json";
 import caboFrioAsset from "@/assets/cabofrio-pinterest.jpg.asset.json";
 import arraialAsset from "@/assets/arraial-pinterest.jpg.asset.json";
 import angraAsset from "@/assets/angra-pinterest.jpg.asset.json";
