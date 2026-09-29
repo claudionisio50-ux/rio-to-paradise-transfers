@@ -46,6 +46,10 @@ export const dict = {
     ],
     requestTransfer: "Solicitar Transfer",
     aeroportos: "Aeroportos do Rio",
+    aeroportosCard: {
+      description: "Recepção no Galeão e no Santos Dumont com transfer privativo até o seu destino.",
+      alt: "Motorista carregando malas em uma van no aeroporto do Rio de Janeiro",
+    },
     whyTitle: "Por que nos escolher",
     why: [
       { t: "+40 Motoristas Profissionais", d: "Equipe própria, credenciada e treinada para receber turistas." },
@@ -131,6 +135,10 @@ export const dict = {
     ],
     requestTransfer: "Solicitar Traslado",
     aeroportos: "Aeropuertos de Río",
+    aeroportosCard: {
+      description: "Recepción en Galeão y Santos Dumont con traslado privado hasta tu destino.",
+      alt: "Chofer cargando equipaje en una van en el aeropuerto de Río de Janeiro",
+    },
     whyTitle: "Por qué elegirnos",
     why: [
       { t: "+40 Conductores Profesionales", d: "Equipo propio, habilitado y capacitado para recibir turistas." },

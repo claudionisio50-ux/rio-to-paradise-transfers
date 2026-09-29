@@ -8,6 +8,7 @@ import caboFrioAsset from "@/assets/cabofrio-pinterest.jpg.asset.json";
 import arraialAsset from "@/assets/arraial-pinterest.jpg.asset.json";
 import angraAsset from "@/assets/angra-pinterest.jpg.asset.json";
 import paratyAsset from "@/assets/paraty-pinterest.jpg.asset.json";
+import aeroportosAsset from "@/assets/aeroportos-rio.png.asset.json";
 import viagem01Asset from "@/assets/viagem-01.png.asset.json";
 import viagem02Asset from "@/assets/viagem-02.png.asset.json";
 import viagem03Asset from "@/assets/viagem-03.png.asset.json";
@@ -210,6 +211,7 @@ function Destinos() {
     { ...t.destinationCards[2], img: caboFrioAsset.url },
     { ...t.destinationCards[3], img: angraAsset.url },
     { ...t.destinationCards[4], img: paratyAsset.url },
+    { ...t.aeroportosCard, name: t.aeroportos, img: aeroportosAsset.url },
   ];
 
   return (
