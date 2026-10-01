@@ -208,7 +208,7 @@ function Destinos() {
     { ...t.destinationCards[0], img: "/buzios-orla-bardot.jpg" },
     { ...t.destinationCards[1], img: arraialAsset.url },
     { ...t.destinationCards[2], img: caboFrioAsset.url },
-    { ...t.destinationCards[3], img: angraAsset.url },
+    { ...t.destinationCards[3], img: "/angra-dos-reis-card.png" },
     { ...t.destinationCards[4], img: paratyAsset.url },
     { ...t.aeroportosCard, name: t.aeroportos, img: aeroportosAsset.url },
   ];
