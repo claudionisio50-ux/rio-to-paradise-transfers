@@ -222,7 +222,7 @@ function Destinos() {
           {cards.map((c) => (
             <article
               key={c.name}
-              className={`group relative isolate flex ${c.name === "Búzios" ? "aspect-[16/9]" : "aspect-[4/5]"} flex-col justify-end overflow-hidden rounded-3xl shadow-[var(--shadow-soft)]`}
+              className="group relative isolate flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-3xl bg-slate-900 shadow-[var(--shadow-soft)]"
             >
               <img
                 src={c.img}
@@ -230,7 +230,7 @@ function Destinos() {
                 loading="lazy"
                 width={c.name === "Búzios" ? 1920 : 1024}
                 height={c.name === "Búzios" ? 1080 : 1024}
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                className={`absolute inset-0 h-full w-full ${c.name === "Búzios" ? "object-contain" : "object-cover"} transition-transform duration-700 group-hover:scale-110`}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-transparent" />
               <div className="relative p-6">
