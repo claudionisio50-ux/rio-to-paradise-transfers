@@ -6,6 +6,7 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
@@ -34,7 +35,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -99,6 +100,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "canonical", href: "https://www.transferrioarraialebuzios.com.br/" },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
+    ],
+    scripts: [
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=AW-17616531512",
+        async: true,
+      },
+      {
+        children: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-17616531512');`,
+      },
     ],
   }),
 
