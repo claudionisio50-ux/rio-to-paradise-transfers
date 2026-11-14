@@ -112,6 +112,16 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'AW-17616531512');`,
       },
+      {
+        children: `document.addEventListener('click', function (e) {
+  var a = e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"], a[href*="whatsapp://"], a[href*="web.whatsapp.com"]');
+  if (!a) return;
+  gtag('event', 'conversion', {
+    'send_to': 'AW-17616531512/gbWUCKi9xrgdELjgm9BB',
+    'transport_type': 'beacon'
+  });
+}, true);`,
+      },
     ],
   }),
 
